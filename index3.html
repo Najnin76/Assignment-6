@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English is Easy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav id="navbar" class="hidden">
+        <div class="nav-container">
+            <div class="logo">
+                <span style="font-size: larger; font-weight: bold;">English</span>
+                <img src="./images/logo.png" alt="Logo">
+                <span style="font-size: larger; font-weight: bold; color: blue;">Very Easy</span>
+            </div>
+            <div class="nav-buttons">
+                <button id="faq-btn"><i class="fas fa-question-circle"></i> FAQ</button>
+                <button id="learn-btn"><i class="fas fa-book-open"></i> Learn</button>
+                <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="banner">
+        <div class="banner-container">
+            <div class="banner-left">
+                <h1>English is Easy!!</h1>
+                <p>আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ।</p>
+                <form id="login-form">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button type="submit">Get Started</button>
+                </form>
+            </div>
+            <div class="banner-right">
+                <img src="./images/hero-student.png" alt="Banner Image">
+            </div>
+        </div>
+    </section>
+
+    <section  class="hidden" id="vocabulary" >
+        <div class="header">
+            <h2 style="font-size: xx-large;"><span style="color: blue;"> Let's</span> Learn Vocabularies</h2>
+        </div>
+    
+        <div class="lesson-navigation">
+            <button class="lesson-button" data-level-id="1"><i class="fa-solid fa-book-open"></i> Lesson-1</button>
+            <button class="lesson-button" data-level-id="2"><i class="fa-solid fa-book-open"></i> Lesson-2</button>
+            <button class="lesson-button" data-level-id="3"><i class="fa-solid fa-book-open"></i> Lesson-3</button>
+            <button class="lesson-button" data-level-id="4"><i class="fa-solid fa-book-open"></i> Lesson-4</button>
+            <button class="lesson-button" data-level-id="5"><i class="fa-solid fa-book-open"></i> Lesson-5</button>
+            <button class="lesson-button" data-level-id="6"><i class="fa-solid fa-book-open"></i> Lesson-6</button>
+            <button class="lesson-button" data-level-id="7"><i class="fa-solid fa-book-open"></i> Lesson-7</button>
+        </div>
+    
+        <div class="loading-message" id="loading">Loading vocabulary...</div>
+        <div class="congratulation-message" id="congratulation">Congratulations!</div>
+        <div class="vocabulary-grid" id="vocabularyGrid">
+        </div>
+    
+        <div class="no-lesson-selected" id="noLessonSelected">
+            <h2>আপনি এখনো কোন Lesson Select করেন নি</h2>
+            <p>একটি Lesson Select করুন।</p>
+        </div>
+    </section>
+
+    <section id="faq" class="hidden">
+        <div class="faq-container">
+            <h2 style="margin-bottom: 50px;"><span style="color: blue;">Frequently</span> Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span> The difference between var, let, and const?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>`var` is function-scoped, hoisted, and can be reassigned. `let` and `const` are block-scoped and hoisted but not initialized. `let` allows reassignment, while `const` does not (though object/array properties can be modified).
+                         Use `let` for variables and `const` for constants. Avoid `var` in modern JavaScript.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>The difference between map(), forEach(), and filter()?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>`map()` creates a new array by applying a function to each element. `forEach()` executes a function for each element but does not return a new array. `filter()` creates a new array with elements that pass a condition.
+                         Use `map()` for transformation, `forEach()` for side effects, and `filter()` for filtering data.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Explain arrow functions and how they are different from regular functions?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Arrow functions are a concise syntax for writing functions in JavaScript. They do not have their own `this`, `arguments`, `super`, or `new.target`. Unlike regular functions, `this` in arrow functions is lexically bound 
+                        (inherited from the surrounding scope). They cannot be used as constructors and lack a `prototype` property.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How JavaScript Promises work?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>JavaScript Promises handle asynchronous operations. A Promise represents a value that may be available now, later, or never. It has three states: **pending**, **fulfilled**, or **rejected**. Use `.then()` for success, `.catch()` for errors, and `.
+                        finally()` for cleanup. Promises simplify chaining async operations and avoid callback hell. Example: `fetch().then().catch()`..</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span> How closures work in JavaScript?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Closures in JavaScript allow a function to access variables from its outer (enclosing) scope even after the outer 
+                        function has finished executing. They "remember" the environment in which they were created. Closures are useful for data encapsulation, creating private variables, and maintaining state in asynchronous operations.
+                         Example: `function outer() { let x = 1; return function inner() { console.log(x); }; }`..</p>
+                </div>
+            </div>
+        </div>
+
+
+            <footer>
+                <div id="footer-container" class="hidden">
+                    <div class="footer-content">
+                        <div class="footer-logo">
+                            <div style="display: flex;  justify-content: center; justify-items: center; padding-bottom: 20px;">
+                            <img src="./images/logo.png" alt="Logo">
+                            <span style="font-size: larger; padding-top: 8px;">English is Easy </span> 
+                            </div>
+                            <div>
+                                <span style="padding-left: 10px; font-size:medium ; font-weight: 700;">ইংরেজি শিখুন সহজে<span> 
+                                <p style="font-size: smaller; font-weight: 300 ;padding-left: 30px;">Providing ED-Tech Applications since 2025</p>
+                            </div>
+                        </div>
+        
+                        <div class="social-icons">
+                            <p style="font-weight: bold; font-size: large; color: black; padding-right: 20px;">FOLLOW US</p>
+                            <div class="icons">
+                                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+    <div id="vocabulary-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-word"></h2>
+            <p id="modal-pronunciation"></p>
+            <p id="modal-example"></p>
+            <p id="modal-synonyms"></p>
+            <button id="modal-complete-btn">Complete Learning</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="es.js"></script>
+</body>
+</html>
+

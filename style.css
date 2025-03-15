@@ -276,9 +276,8 @@ body {
 
 }
 .hidden {
-    display: none;
+    display: none !important;
 }
-
 
 /* Faq Question */
 .faq-container {
